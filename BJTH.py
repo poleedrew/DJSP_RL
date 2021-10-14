@@ -70,11 +70,11 @@ def custom_evaluation(trainer, eval_workers):
     # worker_1.foreach_env.remote(lambda env: env.set_eval(3))
     # worker_2.foreach_env.remote(lambda env: env.set_eval(7))
     global CASE_DIR
-    worker_1.foreach_env.remote(lambda env: env.load_evaluation(os.path.join('/home/lijuyi/DJSP_RL-Env/test_instance',CASE_DIR,'validate_1.json')))
-    worker_2.foreach_env.remote(lambda env: env.load_evaluation(os.path.join('/home/lijuyi/DJSP_RL-Env/test_instance',CASE_DIR,'validate_2.json')))
-    worker_3.foreach_env.remote(lambda env: env.load_evaluation(os.path.join('/home/lijuyi/DJSP_RL-Env/test_instance',CASE_DIR,'validate_3.json')))
-    worker_4.foreach_env.remote(lambda env: env.load_evaluation(os.path.join('/home/lijuyi/DJSP_RL-Env/test_instance',CASE_DIR,'validate_4.json')))
-    worker_5.foreach_env.remote(lambda env: env.load_evaluation(os.path.join('/home/lijuyi/DJSP_RL-Env/test_instance',CASE_DIR,'validate_5.json')))
+    worker_1.foreach_env.remote(lambda env: env.load_evaluation(os.path.join('/home/lijuyi/DJSP_RL/test_instance',CASE_DIR,'validate_1.json')))
+    worker_2.foreach_env.remote(lambda env: env.load_evaluation(os.path.join('/home/lijuyi/DJSP_RL/test_instance',CASE_DIR,'validate_2.json')))
+    worker_3.foreach_env.remote(lambda env: env.load_evaluation(os.path.join('/home/lijuyi/DJSP_RL/test_instance',CASE_DIR,'validate_3.json')))
+    worker_4.foreach_env.remote(lambda env: env.load_evaluation(os.path.join('/home/lijuyi/DJSP_RL/test_instance',CASE_DIR,'validate_4.json')))
+    worker_5.foreach_env.remote(lambda env: env.load_evaluation(os.path.join('/home/lijuyi/DJSP_RL/test_instance',CASE_DIR,'validate_5.json')))
     
 
     for i in range(5):
@@ -102,7 +102,7 @@ def custom_evaluation(trainer, eval_workers):
 
 def train_BJTH():
     env_config = {
-        "djspArgsFile": '/home/lijuyi/DJSP_RL-Env/args.json',
+        "djspArgsFile": '/home/lijuyi/DJSP_RL/args.json',
         "noop": False
     }
     test_ray(env_config)
